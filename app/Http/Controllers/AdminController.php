@@ -15,7 +15,7 @@ class AdminController extends Controller
     {
         $id = Auth::user()->id;
         $profileData = User::find($id);
-        return view('admin.dash_admin', compact('profileData'));
+        return view('admin.dash', compact('profileData'));
     }
     public function adminlogout(Request $request): RedirectResponse
     {
@@ -32,22 +32,33 @@ class AdminController extends Controller
         $id = Auth::user()->id;
         $profileData = User::find($id);
 
-        return view('admin.profile_admin', compact('profileData'));
+        return view('admin.account', compact('profileData'));
+    }
+    public function adminedit()
+    {
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
+
+        return view('admin.accset', compact('profileData'));
     }
     public function adminprofilestore(Request $request)
     {
         $id = Auth::user()->id;
         $data = User::find($id);
-        $data->name = $request->name;
+        $data->nama_depan = $request->nama_depan;
+        $data->nama_belakang = $request->nama_belakang;
         $data->username = $request->username;
+        $data->profesi = $request->profesi;
+        $data->alamat = $request->alamat;
+        $data->kode_pos = $request->kode_pos;
         $data->email = $request->email;
         $data->no_hp = $request->no_hp;
 
         if ($request->hasFile('foto')) {
             $file = $request->file('foto');
-            @unlink(storage_path('app/public/admin_images/' . $data->foto));
+            @unlink(storage_path('app/public/userimg/' . $data->foto));
             $filename = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/admin_images', $filename);
+            $file->storeAs('public/userimg', $filename);
             $data->foto = $filename;
         }
 

@@ -52,7 +52,7 @@
 </x-guest-layout> --}}
 
 
-!doctype html>
+{{-- !doctype html> --}}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -82,10 +82,29 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
-            <h3>Login to <strong>Kelompok 3</strong></h3>
-            <p class="mb-4">Website ecommerce.</p>
-            <form method="POST" action="{{ route('login') }}">
+            <h4>Register to &ensp;<img src="{{ asset("assets/images/logo-dark.png") }} " alt="Logo" class="logo-image" style="max-width: 200px; margin-bottom: 20px;">
+            </h4>
+            <p class="mb-4">Website ecommerce kelompok 3    .</p>
+            <form method="POST" action="{{ route('register') }}">
              @csrf
+             <div class="form-group row">
+                <div class="col-md-6">
+                  <x-input-label for="nama_depan" :value="__('Nama depan')" />
+                  <x-text-input id="nama_depan" class="form-control" type="text" name="nama_depan" :value="old('nama_depan')" placeholder="Your-first-name" id="username" required autofocus autocomplete="nama_depan" />
+                  <x-input-error :messages="$errors->get('nama_depan')" class="mt-2" />
+                </div>
+                <div class="col-md-6">
+                  <x-input-label for="nama_belakang" :value="__('Nama belakang')" />
+                  <x-text-input id="nama_belakang" class="form-control" type="text" name="nama_belakang" :value="old('nama_belakang')" placeholder="Your-last-name" id="username" required autofocus autocomplete="nama_belakang" />
+                  <x-input-error :messages="$errors->get('nama_belakang')" class="mt-2" />
+                </div>
+              </div>
+              <div class="form-group first">
+                <x-input-label for="username" :value="__('Username')" />
+                <x-text-input id="email" class="form-control" type="text" name="username" :value="old('username')" placeholder="your-Username   " id="username" required autofocus autocomplete="username" />
+                <x-input-error :messages="$errors->get('username')" class="mt-2" />
+            </div>
+
               <div class="form-group first">
                 <x-input-label for="email" :value="__('Email')" />
                 <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email')" placeholder="your-email@gmail.com" id="username" required autofocus autocomplete="username" />
@@ -93,7 +112,7 @@
             </div>
 
               <div class="form-group last mb-3">
-                <x-input-label for="password" :value="__('Password')" />
+                <x-input-label for="password" :value="__(' Password')" />
 
                 <x-text-input id="password" class="form-control"
                                 type="password"
@@ -103,23 +122,23 @@
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
+            <div class="form-group last mb-3">
+                <x-input-label for="password" :value="__('Confirm Password')" />
 
-              <div class="d-flex mb-5 align-items-center">
-                <label class="control control--checkbox mb-0"><span class="caption">{{ __('Remember me') }}</span>
-                  <input id="remember_me" type="checkbox" name="remember"  checked="checked"/>
-                  <div class="control__indicator"></div>
-                </label>
+                <x-text-input id="password" class="form-control"
+                                type="password"
+                                name="password_confirmation"
+                                placeholder="Your Password" id="password"
+                                required autocomplete="current-password" />
+
+                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            </div>
 
 
+             
 
-            @if (Route::has('password.request'))
-                <span class="ml-auto"><a href="#" class="forgot-pass"></a></span>
-                {{ __('Forgot your password?') }}
-
-              </div>
-              @endif
-              <x-primary-button class="btn btn-block btn-primary">
-                {{ __('Log in') }}
+              <x-primary-button class="btn btn-block btn-secondary  ">
+                {{ __('Register') }}
             </x-primary-button>
             </form>
           </div>

@@ -16,17 +16,25 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'Dennisse',
-                'username' => 'Admin',
+                'nama_depan' => 'Dennisse',
+                'nama_belakang' => 'Marcellino',
+                'username' => 'Dennisse',
+                'profesi' => 'Designer Baju',
+                'alamat' => 'Lawang, Malang, Jawa Timur',
+                'kode_pos' => '65211',
                 'email' => 'admin@gmail.com',
                 'password' => Hash::make('111'),
                 'role' => 'admin',
-                'no_hp' => '0821211121',
+                'no_hp' => '+(62) 8596 3176 010',
                 'status' => 'aktif',
             ],
             [
-                'name' => 'Yanuardy',
+                'nama_depan' => 'Yanuardy',
+                'nama_belakang' => 'myyy',
                 'username' => 'User',
+                'profesi' => 'Designer Baju',
+                'alamat' => 'Lawang, Malang, Jawa Timur',
+                'kode_pos' => '65211',
                 'email' => 'user@gmail.com',
                 'password' => Hash::make('111'),
                 'role' => 'user',
@@ -37,6 +45,6 @@ class DatabaseSeeder extends Seeder
 
 
         ]);
-       
+
     }
 }

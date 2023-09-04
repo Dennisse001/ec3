@@ -76,8 +76,9 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
-            <h3>Login to <strong>Kelompok 3</strong></h3>
-            <p class="mb-4">Website ecommerce.</p>
+            <h4>Login to &ensp;<img src="{{ asset("assets/images/logo-dark.png") }} " alt="Logo" class="logo-image" style="max-width: 200px; margin-bottom: 20px;">
+            </h4>
+            <p class="mb-4">Website ecommerce kelompok 3    .</p>
             <form method="POST" action="{{ route('login') }}">
              @csrf
               <div class="form-group first">
@@ -98,7 +99,7 @@
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
 
-              <div class="d-flex mb-5 align-items-center">
+              {{-- <div class="d-flex mb-5 align-items-center">
                 <label class="control control--checkbox mb-0"><span class="caption">{{ __('Remember me') }}</span>
                   <input id="remember_me" type="checkbox" name="remember"  checked="checked"/>
                   <div class="control__indicator"></div>
@@ -111,8 +112,8 @@
                 {{ __('Forgot your password?') }}
 
               </div>
-              @endif
-              <x-primary-button class="btn btn-block btn-primary">
+              @endif --}}
+              <x-primary-button class="btn btn-block btn-secondary">
                 {{ __('Log in') }}
             </x-primary-button>
             </form>
