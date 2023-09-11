@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function category()  {
-        return view('categories');
+        public function category()  {
+            return view('categories');
 }
 }
