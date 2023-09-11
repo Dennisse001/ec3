@@ -164,7 +164,7 @@
                 <button type="button" class="btn btn-light w-100" id="reset-layout">View Cart</button>
             </div>
             <div class="col-6">
-                <a href="#!" target="_blank" class="btn btn-info w-100">Continue to Checkout</a>
+                <a href="/chart" target="_blank" class="btn btn-info w-100">Continue to Checkout</a>
             </div>
         </div>
     </div>

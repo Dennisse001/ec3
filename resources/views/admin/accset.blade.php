@@ -33,7 +33,7 @@
                             information applies to be reasonably inferred by either direct or indirect means.</p>
                             <br>
                         <div class="row mb-3">
-                        <center><h5 class="fs-16">Edit Profile Image</h5></center>    
+                        <center><h5 class="fs-16">Edit Profile Image</h5></center>
 
                         <center>      <div class="col-md-8 col-lg-9" >
                                 <img id="showImage"
@@ -43,7 +43,7 @@
                             </div></center>
                         </div>
                         <div class="row mb-3">
-                            
+
                          <center>   <div class="col-md-8 col-lg-9">
                                 <input name="foto" type="file" class="form-control" id="image">
                             </div> </center>

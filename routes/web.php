@@ -2,8 +2,12 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryAdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FashionController;
+use App\Http\Controllers\ProductAdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +28,9 @@ Route::get('/', function () {
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::get('/category', [CategoryController::class, 'category'])->name('category');
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::get('/fashion', [FashionController::class, 'fashion'])->name('fashion');
+Route::get('/chart', [ChartController::class, 'showChart'])->name('chart');
 
 
 Route::get('/dashboard', function () {
@@ -44,5 +51,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/edit', [AdminController::class, 'adminedit'])->name('edit.admin');
     Route::post('/admin/profile/store', [AdminController::class, 'adminprofilestore'])->name('profile.admin.store');
 
+    //product admin
+    Route::get('/admin/product', [ProductAdminController::class, 'adminproduct'])->name('promin');
+    Route::get('/admin/tambahprod', [ProductAdminController::class, 'uploadprod'])->name('tamprod');
+
+    //categories
+    Route::get('/admin/category', [CategoryAdminController::class, 'admincategory'])->name('category.admin');
 
 });

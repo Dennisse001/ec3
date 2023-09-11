@@ -8,6 +8,7 @@
 
   <!--Swiper slider js-->
   <script src={{ asset("assets/libs/swiper/swiper-bundle.min.js") }}></script>
+  <script src="../assets/js/frontend/modern-fashion.init.js"></script>
 
   <!-- Countdown js -->
   <script src={{ asset("assets/js/pages/coming-soon.init.js") }}></script>
