@@ -84,7 +84,7 @@
                                 <a href="watch-main-layout.html" class="nav-link" data-key="t-unique-watches">Unique Watches</a>
                             </li>
                             <li class="nav-item">
-                                <a href="modern-fashion.html" class="nav-link" data-key="t-modern-fashion">Modern Fashion</a>
+                                <a href="/fashion" class="nav-link" data-key="t-modern-fashion">Modern Fashion</a>
                             </li>
                             <li class="nav-item">
                                 <a href="trend-fashion.html" class="nav-link" data-key="t-trend-fashion">Trend Fashion</a>

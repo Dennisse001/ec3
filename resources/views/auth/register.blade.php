@@ -84,7 +84,7 @@
           <div class="col-md-7">
             <h4>Register to &ensp;<img src="{{ asset("assets/images/logo-dark.png") }} " alt="Logo" class="logo-image" style="max-width: 200px; margin-bottom: 20px;">
             </h4>
-            <p class="mb-4">Website ecommerce kelompok 3    .</p>
+            
             <form method="POST" action="{{ route('register') }}">
              @csrf
              <div class="form-group row">
@@ -104,6 +104,11 @@
                 <x-text-input id="email" class="form-control" type="text" name="username" :value="old('username')" placeholder="your-Username   " id="username" required autofocus autocomplete="username" />
                 <x-input-error :messages="$errors->get('username')" class="mt-2" />
             </div>
+            <div class="form-group first">
+                <x-input-label for="no_hp" :value="__('No Telepon')" />
+                <x-text-input id="np_hp" class="form-control" type="text" name="no_hp" :value="old('no_hp')" placeholder="your-Username   " id="no_hp" required autofocus autocomplete="username" />
+                <x-input-error :messages="$errors->get('no_hp')" class="mt-2" />
+            </div>
 
               <div class="form-group first">
                 <x-input-label for="email" :value="__('Email')" />
@@ -112,30 +117,31 @@
             </div>
 
               <div class="form-group last mb-3">
-                <x-input-label for="password" :value="__(' Password')" />
+                <x-input-label for="password" :value="__('Password')" />
 
                 <x-text-input id="password" class="form-control"
                                 type="password"
                                 name="password"
                                 placeholder="Your Password" id="password"
-                                required autocomplete="current-password" />
+                                required autocomplete="new-password" />
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
             <div class="form-group last mb-3">
-                <x-input-label for="password" :value="__('Confirm Password')" />
+                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                <x-text-input id="password" class="form-control"
+                <x-text-input id="password_confirmation" class="form-control"
                                 type="password"
                                 name="password_confirmation"
-                                placeholder="Your Password" id="password"
-                                required autocomplete="current-password" />
+                                placeholder="Your Password" id="password_confirmation"
+                                required autocomplete="new-password" />
 
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
 
 
-             
+
+
 
               <x-primary-button class="btn btn-block btn-secondary  ">
                 {{ __('Register') }}
