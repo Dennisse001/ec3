@@ -1,4 +1,4 @@
-@extend('admin.mindex')
+@extends('admin.mindex')
 @section('isii')
 <div class="main-content">
 
