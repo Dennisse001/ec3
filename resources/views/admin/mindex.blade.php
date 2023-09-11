@@ -743,7 +743,7 @@
                                             <a href="product-create.html" class="nav-link" data-key="t-create-product">Create Product</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="categories.html" class="nav-link" data-key="t-categories">Categories</a>
+                                            <a href="{{ route('categoryadmin')}}" class="nav-link" data-key="t-categories">Categories</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="sub-categories.html" class="nav-link" data-key="t-sub-categories">Sub Categories</a>
