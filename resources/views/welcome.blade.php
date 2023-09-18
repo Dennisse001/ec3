@@ -201,7 +201,7 @@
                             </div>
                             <div class="card-body">
                                 <div>
-                                    <a href="product-details.html">
+                                    <a href="{{ route('detail') }}">
                                         <h6 class="fs-15 lh-base text-truncate mb-0">Man Relaxed Fit T-shirt</h6>
                                     </a>
                                     <div class="mt-3">

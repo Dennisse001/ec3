@@ -56,13 +56,8 @@
                                     <label class="form-label">Product description</label>
 
                                     <div id="ckeditor-classic">
-                                        <p>Tommy Hilfiger men striped pink sweatshirt. Crafted with cotton. Material composition is 100% organic cotton. This is one of the world’s leading designer lifestyle brands and is internationally recognized for celebrating the essence of classic American cool style, featuring preppy with a twist designs.</p>
-                                        <ul>
-                                            <li>Full Sleeve</li>
-                                            <li>Cotton</li>
-                                            <li>All Sizes available</li>
-                                            <li>4 Different Color</li>
-                                        </ul>
+                                        <p>Enter your product description.</p>
+
                                     </div>
                                 </div>
 
@@ -72,7 +67,7 @@
                                             <label class="form-label">Product category</label>
                                         </div>
                                         <div class="flex-shrink-0">
-                                            <a href="#" class="float-end text-decoration-underline">Add New</a>
+                                            <a href="{{ route('categoryadmin') }}" class="float-end text-decoration-underline">Add New</a>
                                         </div>
                                     </div>
                                     <div>
@@ -177,73 +172,10 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="product-discount-input">Discount</label>
-                                            <div class="input-group has-validation mb-3">
-                                                <span class="input-group-text" id="product-discount-addon">%</span>
-                                                <input type="text" class="form-control" id="product-discount-input" placeholder="Enter discount" aria-label="discount" aria-describedby="product-discount-addon" required>
-                                                <div class="invalid-feedback">Please enter a product discount.</div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-sm-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="orders-input">Orders</label>
-                                            <input type="text" class="form-control" id="orders-input" placeholder="Orders" required>
-                                            <div class="invalid-feedback">Please enter a product orders.</div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div>
-                                            <label class="form-label">Colors</label>
-                                            <ul class="clothe-colors list-unstyled hstack gap-2 mb-0 flex-wrap">
-                                                <li>
-                                                    <input type="checkbox" value="success" id="color-1">
-                                                    <label class="avatar-xs btn btn-success p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-1"></label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" value="info" id="color-2">
-                                                    <label class="avatar-xs btn btn-info p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-2"></label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" value="warning" id="color-3">
-                                                    <label class="avatar-xs btn btn-warning p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-3"></label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" value="danger" id="color-4">
-                                                    <label class="avatar-xs btn btn-danger p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-4"></label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" value="primary" id="color-5">
-                                                    <label class="avatar-xs btn btn-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-5"></label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" value="secondary" id="color-6">
-                                                    <label class="avatar-xs btn btn-secondary p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-6"></label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" value="dark" id="color-7">
-                                                    <label class="avatar-xs btn btn-dark p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-7"></label>
-                                                </li>
-                                                <li>
-                                                    <input type="checkbox" value="light" id="color-8">
-                                                    <label class="avatar-xs btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle" for="color-8"></label>
-                                                </li>
-                                            </ul>
-                                            <div class="error-msg mt-1">Please select a product colors.</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
+ <div class="col-lg-6">
                                         <div class="mt-3 mt-lg-0">
                                             <label class="form-label">Sizes</label>
-                                            <ul class="clothe-size list-unstyled hstack gap-2 mb-0 flex-wrap" id="size-filter">
+                                            <ul class="clothe-size list-unstyled hstack gap-2 mb-0 flex-wrap" id="size" name="size">
                                                 <li>
                                                     <input type="checkbox" value="xs" id="sizeXs">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeXs">XS</label>
@@ -288,7 +220,12 @@
                                             <div class="error-msg mt-1">Please select a product sizes.</div>
                                         </div>
                                     </div>
+
+                                    <!-- end col -->
                                 </div>
+                                <!-- end row -->
+
+                                
                             </div>
                         </div>
                         <!-- end card -->
@@ -326,18 +263,7 @@
                         </div>
                         <!-- end card -->
 
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-title mb-0">Publish Schedule</h5>
-                            </div>
-                            <!-- end card body -->
-                            <div class="card-body">
-                                <div>
-                                    <label for="datepicker-publish-input" class="form-label">Publish Date & Time</label>
-                                    <input type="text" id="datepicker-publish-input" class="form-control" placeholder="Enter publish date" data-provider="flatpickr" data-date-format="d.m.y" data-enable-time>
-                                </div>
-                            </div>
-                        </div>
+
                         <!-- end card -->
 
 
@@ -362,7 +288,7 @@
                             </div>
                             <div class="card-body">
                                 <p class="text-muted mb-2">Add short description for product</p>
-                                <textarea class="form-control" placeholder="Must enter minimum of a 100 characters" rows="3"></textarea>
+                                <textarea name="singkat" id="singkat" placeholder="Must enter minimum of a 100 characters" rows="3"></textarea>
                             </div>
                             <!-- end card body -->
                         </div>

@@ -733,21 +733,14 @@
                                         <li class="nav-item">
                                             <a href="{{ route('promin') }}" class="nav-link" data-key="t-list-view">Produk</a>
                                         </li>
+
                                         <li class="nav-item">
-                                            <a href="product-grid.html" class="nav-link" data-key="t-grid-view">Grid View</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="product-overview.html" class="nav-link" data-key="t-overview">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="product-create.html" class="nav-link" data-key="t-create-product">Create Product</a>
+                                            <a href="{{ route('tamprod') }}" class="nav-link" data-key="t-create-product">Create Product</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="{{ route('categoryadmin')}}" class="nav-link" data-key="t-categories">Categories</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="sub-categories.html" class="nav-link" data-key="t-sub-categories">Sub Categories</a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </li>

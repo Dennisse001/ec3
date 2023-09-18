@@ -14,6 +14,7 @@
   <script src={{ asset("assets/js/pages/coming-soon.init.js") }}></script>
 
   <script src={{ asset("assets/js/frontend/landing-index.init.js") }}></script>
+  <script src="../assets/js/frontend/product-details.init.js"></script>
 
   <script src={{ asset("assets/js/frontend/menu.init.js") }}></script>
 

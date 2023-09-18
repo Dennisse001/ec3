@@ -8,6 +8,7 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FashionController;
 use App\Http\Controllers\ProductAdminController;
+use App\Http\Controllers\ProductDetailController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +32,7 @@ Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/fashion', [FashionController::class, 'fashion'])->name('fashion');
 Route::get('/chart', [ChartController::class, 'showChart'])->name('chart');
-Route::get('/productdetail', [ProductDetailController::Class, 'detailproduct']->name('detail'));
+Route::get('/productdetail', [ProductDetailController::class, 'detailproduct'])->name('detail');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -59,5 +60,5 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     //categories
     Route::get('/admin/category', [CategoryAdminController::class, 'category'])->name('categoryadmin');
-  Route::get('/admin/categorycreate', [CategoryAdminController::class, 'create_category'])->name('createcat');
+  Route::post('/admin/categorycreate', [CategoryAdminController::class, 'create_category'])->name('createcat');
 });
