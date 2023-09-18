@@ -31,7 +31,6 @@ return new class extends Migration
             $table->string('brand')->nullable();
             $table->string('stock')->nullable();
             $table->string('tags')->nullable();
-            
             $table->string('harga')->nullable();
             $table->string('size')->nullable();
             $table->string('status')->nullable();

@@ -71,16 +71,16 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <select class="form-select" id="choices-category-input" name="choices-category-input">
+
+                                            <label for="kategori_id">Kategori</label>
+
+                                        <select class="form-select" id="kategori_id" name="kategori_id">
                                             <option value="">Select product category</option>
-                                            <option value="Appliances">Appliances</option>
-                                            <option value="Automotive Accessories">Automotive Accessories</option>
-                                            <option value="Electronics" selected>Electronics</option>
-                                            <option value="Fashion">Fashion</option>
-                                            <option value="Furniture">Furniture</option>
-                                            <option value="Grocery">Grocery</option>
-                                            <option value="Kids">Kids</option>
-                                            <option value="Watches">Watches</option>
+
+                                                    @foreach($categories as $category)
+                                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                    @endforeach
+
                                         </select>
                                     </div>
                                     <div class="error-msg mt-1">Please select a product category.</div>
@@ -225,7 +225,7 @@
                                 </div>
                                 <!-- end row -->
 
-                                
+
                             </div>
                         </div>
                         <!-- end card -->

@@ -14,6 +14,6 @@ class kategori extends Model
 
     public function product()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(ProductAdmin::class, 'kategory_id');
     }
 }

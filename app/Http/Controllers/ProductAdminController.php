@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kategori;
 use App\Models\productadmin;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,10 @@ class ProductAdminController extends Controller
 
     public function uploadprod()
     {
-        return view('admin.createprod');
+        $categories = kategori::all();
+
+
+        return view('admin.createprod', ['categories' => $categories]);
     }
     public function tambahprod(Request $request) {
 
@@ -30,8 +34,12 @@ class ProductAdminController extends Controller
         $model->tanggal = $request->tanggal;
         $model->isi = $request->isi;
         $model->singkat = $request->singkat;
-        $model-> = $request->singkat;
+        $model->status = $request->status;
         $model->tags = $request->tags;
+        $model->statuson = $request->statuson;
+        $categories = kategori::all();
+
+
 
         $model->user_id = Auth::user()->id;
 
@@ -42,10 +50,17 @@ class ProductAdminController extends Controller
             $file->storeAs('public/admin_prod', $filename);
             $model->cover = $filename;
         }
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            @unlink(storage_path('app/public/admin_gam/' . $model->cover));
+            $filename = Str::random(20) . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/admin_gam', $filename);
+            $model->cover = $filename;
+        }
 
         $model->save();
 
-        return redirect()->route('admin.postingan')->with('success', 'Images uploaded successfully.');
+        return redirect()->route('admin.postingan', ['categories' => $categories]);
 
 
     }

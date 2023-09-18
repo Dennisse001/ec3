@@ -16,4 +16,11 @@ class productadmin extends Model
     {
         return $this->belongsTo(User::class);
     }
+    // ProductAdmin.php
+
+public function category()
+{
+    return $this->belongsTo(kategori::class, 'id');
+}
+
 }
