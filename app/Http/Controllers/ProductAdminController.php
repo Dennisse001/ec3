@@ -26,9 +26,13 @@ class ProductAdminController extends Controller
 
         $model  = new productadmin();
         $model->judul = $request->judul;
-        $model->subjudul = $request->subjudul;
+        $model->brand = $request->brand;
         $model->tanggal = $request->tanggal;
         $model->isi = $request->isi;
+        $model->singkat = $request->singkat;
+        $model-> = $request->singkat;
+        $model->tags = $request->tags;
+
         $model->user_id = Auth::user()->id;
 
         if ($request->hasFile('cover')) {
