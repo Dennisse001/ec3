@@ -31,7 +31,7 @@ Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::get('/fashion', [FashionController::class, 'fashion'])->name('fashion');
 Route::get('/chart', [ChartController::class, 'showChart'])->name('chart');
-
+Route::get('/productdetail', [ProductDetailController::Class, 'detailproduct']->name('detail'));
 
 Route::get('/dashboard', function () {
     return view('dashboard');
