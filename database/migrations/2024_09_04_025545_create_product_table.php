@@ -12,12 +12,6 @@ return new class extends Migration
     {
         Schema::create('product', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable();
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
             $table->foreignId('kategori_id')->nullable();
             $table->foreign('kategori_id')
                 ->references('id')
@@ -26,7 +20,6 @@ return new class extends Migration
                 ->onUpdate('cascade');
             $table->timestamps();
             $table->string('cover')->nullable();
-            $table->string('galeri')->nullable();
             $table->string('judul')->nullable();
             $table->string('brand')->nullable();
             $table->string('stock')->nullable();
@@ -34,7 +27,7 @@ return new class extends Migration
             $table->string('harga')->nullable();
             $table->string('size')->nullable();
             $table->string('status')->nullable();
-            $table->string('statuson')->nullable();
+            $table->string('public')->nullable();
             $table->text('singkat')->nullable();
             $table->text('isi')->nullable();
 

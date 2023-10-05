@@ -57,6 +57,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     //product admin
     Route::get('/admin/product', [ProductAdminController::class, 'adminproduct'])->name('promin');
     Route::get('/admin/tambahprod', [ProductAdminController::class, 'uploadprod'])->name('tamprod');
+    Route::post('/admin/addprod', [ProductAdminController::class, 'tambahprod'])->name('addprod');
 
     //categories
     Route::get('/admin/category', [CategoryAdminController::class, 'category'])->name('categoryadmin');

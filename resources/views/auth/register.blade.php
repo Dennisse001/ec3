@@ -70,7 +70,7 @@
     <!-- Style -->
     <link rel="stylesheet" href={{ asset("css/style.css") }}>
 
-    <title>Login #2</title>
+    <title>Register SualKu</title>
   </head>
   <body>
 
@@ -84,7 +84,7 @@
           <div class="col-md-7">
             <h4>Register to &ensp;<img src="{{ asset("assets/images/logo-dark.png") }} " alt="Logo" class="logo-image" style="max-width: 200px; margin-bottom: 20px;">
             </h4>
-            
+
             <form method="POST" action="{{ route('register') }}">
              @csrf
              <div class="form-group row">

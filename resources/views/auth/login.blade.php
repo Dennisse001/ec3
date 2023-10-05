@@ -64,7 +64,7 @@
     <!-- Style -->
     <link rel="stylesheet" href={{ asset("css/style.css") }}>
 
-    <title>Login #2</title>
+    <title>Login SualKu</title>
   </head>
   <body>
 
@@ -83,7 +83,7 @@
              @csrf
               <div class="form-group first">
                 <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email')" placeholder="your-email@gmail.com" id="username" required autofocus autocomplete="username" />
+                <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email')" placeholder="Masukkan Alamat Email Anda" id="username" required autofocus autocomplete="username" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
@@ -93,7 +93,7 @@
                 <x-text-input id="password" class="form-control"
                                 type="password"
                                 name="password"
-                                placeholder="Your Password" id="password"
+                                placeholder="Masukkan Password Anda" id="password"
                                 required autocomplete="current-password" />
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />

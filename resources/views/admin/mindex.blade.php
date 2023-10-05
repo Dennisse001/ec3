@@ -547,9 +547,9 @@
                                     <span class="d-flex align-items-center">
                                         <img class="rounded-circle header-profile-user" src="{{ (!empty(Auth::user()->foto)) ? asset('storage/userimg/' . Auth::user()->foto) : asset('upload/no_image.png') }}" alt="Header Avatar">
                                         <span class="text-start ms-xl-2">
-                                            <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">@if(Auth::check())
-                                                {{ Auth::user()->username }}
-                                             @endif</span>
+                                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">@if(Auth::check())
+                                                    {{ Auth::user()->username }}
+                                                @endif</span>
 
                                             <span class="d-none d-xl-block ms-1 fs-13 user-name-sub-text">@if(Auth::check())
                                                 {{ Auth::user()->role }}

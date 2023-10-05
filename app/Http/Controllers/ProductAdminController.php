@@ -15,7 +15,7 @@ class ProductAdminController extends Controller
 {
     public function adminproduct()
     {
-        $data = productadmin::with('user')->where('user_id', Auth::user()->id)->get();
+        $data = productadmin::all();
         return view('admin.showprod', ['data' => $data]);
     }
 
@@ -31,17 +31,16 @@ class ProductAdminController extends Controller
         $model  = new productadmin();
         $model->judul = $request->judul;
         $model->brand = $request->brand;
-        $model->tanggal = $request->tanggal;
         $model->isi = $request->isi;
         $model->singkat = $request->singkat;
-        $model->status = $request->status;
+        $model->harga = $request->harga;
         $model->tags = $request->tags;
-        $model->statuson = $request->statuson;
-        $categories = kategori::all();
+        $model->status = $request->status;
+        $model->public = $request->public;
+        $model->size = $request->size;
+        $model->stock = $request->stock;
+        $model->category()->associate($request->kategori_id);
 
-
-
-        $model->user_id = Auth::user()->id;
 
         if ($request->hasFile('cover')) {
             $file = $request->file('cover');
@@ -50,17 +49,10 @@ class ProductAdminController extends Controller
             $file->storeAs('public/admin_prod', $filename);
             $model->cover = $filename;
         }
-        if ($request->hasFile('gambar')) {
-            $file = $request->file('gambar');
-            @unlink(storage_path('app/public/admin_gam/' . $model->cover));
-            $filename = Str::random(20) . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/admin_gam', $filename);
-            $model->cover = $filename;
-        }
 
         $model->save();
 
-        return redirect()->route('admin.postingan', ['categories' => $categories]);
+        return redirect()->route('promin');
 
 
     }

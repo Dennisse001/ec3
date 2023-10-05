@@ -23,7 +23,8 @@
             </div>
             <!-- end page title -->
 
-            <form method="POST" action="#" enctype="multipart/form-data" id="createproduct-form" autocomplete="off" class="needs-validation" novalidate>
+            <form method="POST" action="{{ route('addprod') }}" enctype="multipart/form-data" id="createproduct-form" autocomplete="off" class="needs-validation" novalidate>
+                @csrf
                 <div class="row">
                     <div class="col-xl-9 col-lg-8">
                         <div class="card">
@@ -140,8 +141,8 @@
                                 <div class="row ">
                                     <div class="col-lg-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="manufacturer-name-input">Manufacturer Name</label>
-                                            <input type="text" class="form-control" id="manufacturer-name-input" placeholder="Enter manufacturer name">
+                                            <label class="form-label" for="Brand">Brand</label>
+                                            <input type="text" name="brand" class="form-control" id="brand" placeholder="Masukkan nama brand">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -156,17 +157,17 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="stocks-input">Stocks</label>
-                                            <input type="text" class="form-control" id="stocks-input" placeholder="Stocks" required>
+                                            <label class="form-label" for="stocks-input">Stock</label>
+                                            <input type="text" class="form-control" id="stock" placeholder="stock" required>
                                             <div class="invalid-feedback">Please enter a product stocks.</div>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-sm-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="product-price-input">Price</label>
+                                            <label class="form-label" for="harga">Harga</label>
                                             <div class="input-group has-validation mb-3">
                                                 <span class="input-group-text" id="product-price-addon">$</span>
-                                                <input type="text" class="form-control" id="product-price-input" placeholder="Enter price" aria-label="Price" aria-describedby="product-price-addon" required>
+                                                <input type="text" class="form-control" id="harga" name="harga" placeholder="Masukkan Harga" aria-label="Price" aria-describedby="product-price-addon" required>
                                                 <div class="invalid-feedback">Please enter a product price.</div>
                                             </div>
 
@@ -177,43 +178,43 @@
                                             <label class="form-label">Sizes</label>
                                             <ul class="clothe-size list-unstyled hstack gap-2 mb-0 flex-wrap" id="size" name="size">
                                                 <li>
-                                                    <input type="checkbox" value="xs" id="sizeXs">
+                                                    <input type="checkbox" value="xs" id="sizeXs" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeXs">XS</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" value="s" id="sizeS">
+                                                    <input type="checkbox" value="s" id="sizeS" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeS">S</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" value="m" id="sizeM">
+                                                    <input type="checkbox" value="m" id="sizeM" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeM">M</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" value="l" id="sizeL">
+                                                    <input type="checkbox" value="l" id="sizeL" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeL">L</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" value="xl" id="sizeXl">
+                                                    <input type="checkbox" value="xl" id="sizeXl" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="sizeXl">XL</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" value="2xl" id="size2xl">
+                                                    <input type="checkbox" value="2xl" id="size2xl" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size2xl">2XL</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" value="3xl" id="size3xl">
+                                                    <input type="checkbox" value="3xl" id="size3xl" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size3xl">3XL</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" value="40" id="size40">
+                                                    <input type="checkbox" value="40" id="size40" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size40">40</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" value="41" id="size41">
+                                                    <input type="checkbox" value="41" id="size41" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size41">41</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" value="42" id="size42">
+                                                    <input type="checkbox" value="42" id="size42" name="size">
                                                     <label class="avatar-xs btn btn-soft-primary p-0 d-flex align-items-center justify-content-center rounded-circle" for="size42">42</label>
                                                 </li>
                                             </ul>
@@ -244,7 +245,7 @@
                                 <div class="mb-3">
                                     <label for="choices-publish-status-input" class="form-label">Status</label>
 
-                                    <select class="form-select" id="choices-publish-status-input" data-choices data-choices-search-false>
+                                    <select class="form-select" id="choices-publish-status-input" name="status" data-choices data-choices-search-false>
                                         <option value="Published" selected>Published</option>
                                         <option value="Scheduled">Scheduled</option>
                                         <option value="Draft">Draft</option>
@@ -253,7 +254,7 @@
 
                                 <div>
                                     <label for="choices-publish-visibility-input" class="form-label">Visibility</label>
-                                    <select class="form-select" id="choices-publish-visibility-input" data-choices data-choices-search-false>
+                                    <select class="form-select" id="public" name="public" data-choices data-choices-search-false>
                                         <option value="Public" selected>Public</option>
                                         <option value="Hidden">Hidden</option>
                                     </select>
@@ -274,7 +275,7 @@
                             <div class="card-body">
                                 <div class="hstack gap-3 align-items-start">
                                     <div class="flex-grow-1">
-                                        <input class="form-control" data-choices data-choices-multiple-remove="true" placeholder="Enter tags" type="text" value="Cotton">
+                                        <input class="form-control" data-choices data-choices-multiple-remove="true" placeholder="Masukkan tags" type="text" name="tags" id="tags">
                                     </div>
                                 </div>
                             </div>

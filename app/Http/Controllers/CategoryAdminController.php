@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 class CategoryAdminController extends Controller
 {
     public function category()  {
-        return view('admin.categories');
+        $data = kategori::  paginate(4);
+        return view('admin.categories',  ['data' => $data]);
     }
 
     public function create_category(Request $request)
